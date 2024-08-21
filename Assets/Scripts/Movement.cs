@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private float _jumpForce = 10f;
     [SerializeField] private float _startMovementSpeed;
+    [SerializeField] private Joystick _joystick;
     private float _currentMovementSpeed;
 
     private float _movementDirection;
@@ -24,7 +25,9 @@ public class Movement : MonoBehaviour
             Jump();
         }
 
-        _movementDirection = Input.GetAxisRaw("Horizontal");
+        _movementDirection = _joystick.Direction.x;
+        Debug.Log(_joystick.Direction.x);
+        //_movementDirection = Input.GetAxisRaw("Horizontal");
     }
 
     // Update is called once per frame
