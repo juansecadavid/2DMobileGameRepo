@@ -9,7 +9,12 @@ public class WoodController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+            WoodCounter woodCounter = other.GetComponent<WoodCounter>();
+            if (woodCounter!=null)
+            {
+                woodCounter.AddWood();
+                gameObject.SetActive(false);
+            }
         }
     }
 }

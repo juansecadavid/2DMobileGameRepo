@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5210568369472223294}
   - component: {fileID: 7957373526298348680}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,8 +61,8 @@ MonoBehaviour:
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
-  m_ShadowIntensityEnabled: 0
-  m_ShadowIntensity: 0.75
+  m_ShadowIntensityEnabled: 1
+  m_ShadowIntensity: 0.5
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1.2245886
+  m_PointLightOuterRadius: 4.49
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -94,7 +94,9 @@ GameObject:
   - component: {fileID: 5294809534833313856}
   - component: {fileID: 8306622253442548887}
   - component: {fileID: 5017465079529703515}
-  m_Layer: 0
+  - component: {fileID: 3157523520154357988}
+  - component: {fileID: 1443827074717378027}
+  m_Layer: 4
   m_Name: FitrePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,6 +207,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _light2D: {fileID: 5787760859957384697}
   _spriteRenderer: {fileID: 5294809534833313856}
+--- !u!114 &3157523520154357988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104550805033689542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fe186346491cc40bd0ea875d0b7dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _light2D: {fileID: 7957373526298348680}
+  _intervalReduce: 2
+--- !u!61 &1443827074717378027
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104550805033689542}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0068876147, y: -0.185963}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0182744, y: 0.90807396}
+  m_EdgeRadius: 0
 --- !u!1 &3576090769103110596
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4753051982491122349}
   - component: {fileID: 5787760859957384697}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: SpriteLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
