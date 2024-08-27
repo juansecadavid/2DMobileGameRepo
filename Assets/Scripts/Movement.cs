@@ -10,7 +10,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _startMovementSpeed;
     [SerializeField] private Joystick _joystick;
     private float _currentMovementSpeed;
-    private bool canJump = true; 
+    private bool canJump = true;
+    private bool isOnPLtaform = false;
 
     public float MovementDirection { get; private set; }
 
@@ -27,7 +28,10 @@ public class Movement : MonoBehaviour
             Jump();
         }
 
-        MovementDirection = _joystick.Direction.x;
+        if (!isOnPLtaform || _joystick.Direction.x!=0)
+        {
+            MovementDirection = _joystick.Direction.x;
+        }
         //_movementDirection = Input.GetAxisRaw("Horizontal");
     }
 
@@ -49,13 +53,19 @@ public class Movement : MonoBehaviour
 
     public void MoveOverride(float _directionMagnitude, float _speed)
     {
-        MovementDirection = _directionMagnitude;
-        _currentMovementSpeed = _speed;
+        if (_joystick.Direction.x == 0)
+        {
+            MovementDirection = _directionMagnitude;
+            _currentMovementSpeed = _speed;
+            //isOnPLtaform = true;
+        }
+        isOnPLtaform = true;
     }
     
     public void ResetMovement()
     {
         _currentMovementSpeed = _startMovementSpeed;
+        isOnPLtaform = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

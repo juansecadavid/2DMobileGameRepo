@@ -10,9 +10,9 @@ public class Score : MonoBehaviour
 
     private int _score=0;
     
-    public void IncreaseScore()
+    public void IncreaseScore(int amount)
     {
-        _score++;
+        _score+=amount;
         UpdateScore();
     }
 

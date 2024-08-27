@@ -12,6 +12,7 @@ public class FireController : MonoBehaviour
     private float currentLightIntensity;
     private WoodCounter _woodCounter;
     [SerializeField] private float _intervalReduce;
+    [SerializeField] private Score _score;
 
     private float Incrementer;
 
@@ -39,6 +40,7 @@ public class FireController : MonoBehaviour
     {
         currentLightIntensity += Incrementer;
         Debug.Log("CalledToEnhance");
+        _score.IncreaseScore(5);
     }
 
     private void ReduceLight()
